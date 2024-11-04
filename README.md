@@ -1,6 +1,32 @@
 # AutoMAILForm
 
-## Dependencies and their use
+## Dependencies
+
+1. Express installation
+
+```shell
+# Dependencies
+npm install express --save
+# typing
+npm install --save-dev @types/express
+```
+
+- Documentation
+  express: https://expressjs.com/
+
+2. favicon installation
+
+```shell
+# Dependencies
+npm install serve-favicon --save
+# typing
+npm install --save-dev @types/serve-favicon
+```
+
+- Documentation
+  favicon: https://www.npmjs.com/package/serve-favicon
+
+## TypeScript Configuration base
 
 1. For use TypeScript in this projet, you will need this dependencie
 
