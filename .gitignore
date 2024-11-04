@@ -1,0 +1,45 @@
+# Ignorer le dossier node_modules (dépendances de Node.js)
+node_modules/
+node_modules/*
+
+# Ignorer les fichiers de log
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorer les fichiers de configuration de l'éditeur de code
+.DS_Store
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Ignorer les dossiers de build (ex : si tu as un dossier de compilation)
+dist/
+build/
+
+# Ignorer les fichiers de configuration environnementale
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorer les fichiers générés par npm ou yarn
+package-lock.json
+yarn.lock
+
+# Ignorer les fichiers de tests de couverture de code
+coverage/
+
+# Ignorer les fichiers temporaires du système
+*.swp
+*.tmp
+*.temp
+*.bak
+*.old
+Thumbs.db
+
+# Ignorer les fichiers de débogage de l'IDE
+*.log
