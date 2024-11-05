@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import favicon from "serve-favicon";
 
 const app = express();
@@ -14,4 +14,17 @@ app.listen(port, () =>
 
 app.get("/api/hello", (req, res) => {
   res.json("hello world ;)");
+});
+
+app.post("/api/submit-form", (req: Request, res: Response) => {
+  const { name, email, message } = req.body;
+
+  // TODO check des donnée du formulaire
+  if (!name || !email || !message) {
+    res.status(400).json({ error: "Tous les champs sont requis !" });
+  }
+
+  // la transmettre la demande utilsateur vers le service d'envoi de Email
+  // Enregistrer en base de données la demande utilisateur
+  // retourner un message a l'utilisateur
 });
