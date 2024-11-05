@@ -26,6 +26,30 @@ npm install --save-dev @types/serve-favicon
 - Documentation
   favicon: https://www.npmjs.com/package/serve-favicon
 
+3. node mailer
+
+```shell
+# Dependencies
+npm install nodemailer --save
+# typing
+npm install --save-dev @types/nodemailer
+```
+
+- Documentation
+  nodemailer: https://www.npmjs.com/package/nodemailer
+
+4. dotenv
+
+```shell
+# Dependencies
+npm install dotenv --save
+# typing
+npm install --save-dev @types/dotenv
+```
+
+- Documentation
+  dotenv: https://www.npmjs.com/package/dotenv#%EF%B8%8F-usage
+
 ## TypeScript Configuration base
 
 1. For use TypeScript in this projet, you will need this dependencie
