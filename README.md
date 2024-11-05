@@ -1,5 +1,7 @@
 # AutoMAILForm
 
+AutoMailForm is an API service designed to facilitate the automated sending of emails from form data, while ensuring reliable and secure transmission to other systems. It provides a simple integration layer to automate email communication and data processing.
+
 ## Dependencies
 
 1. Express installation
