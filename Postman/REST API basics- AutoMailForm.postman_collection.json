@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "58277073-e2fd-4f89-b243-851cb94807ad",
+		"name": "REST API basics: AutoMailForm",
+		"description": "# 🚀 API AutoMailForm\n\nCette API permet l'envoi de mail vers un serveur SMTP MailPlus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11348257"
+	},
+	"item": [
+		{
+			"name": "sendMail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ghalem Maxime\",\r\n    \"email\": \"ghalem.maxime@gmail.com\",\r\n    \"sujetClient\": \"Demande d'information client\",\r\n    \"messageUser\": \"Bonjour, j'aurais besoin de vos service. Contacter moi dès que possible.\",\r\n    \"sujetReponse\": \"Confirmation: Demande d'information client\",\r\n    \"texteReponse\": \"Nous vous remercions pour votre demande. Notre équipe reviendra vers vous dans les plus brefs délais.\",\r\n    \"testlenght\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{submit-form}}",
+					"host": [
+						"{{base_url}}{{submit-form}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Ce point de terminaison permet de receptionne une demande client est la transmet vers un serveur SMTP."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3010"
+		},
+		{
+			"key": "send",
+			"value": "/api/send",
+			"type": "string"
+		},
+		{
+			"key": "hello",
+			"value": "/api/hello",
+			"type": "string"
+		},
+		{
+			"key": "submit-form",
+			"value": "/api/submit-form",
+			"type": "string"
+		}
+	]
+}
