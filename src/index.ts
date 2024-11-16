@@ -1,8 +1,9 @@
 import express, { Request, Response } from "express";
 import favicon from "serve-favicon";
+import path from "path";
 import { sendMail, sendUserEmail } from "./service/mailer";
 import { EmailUtils } from "./utils/EmailUtils";
-import { EmailLog } from "../src/model/mail";
+import { EmailLog } from "./model/mail";
 import config from "./config";
 
 // initialisation
@@ -18,7 +19,7 @@ const app = express();
 })();
 
 // middlewares
-app.use(favicon(__dirname + "/favicon.ico"), express.json());
+app.use(favicon(path.join(__dirname + "/favicon.ico")), express.json());
 
 app.post("/api/sendMail", async (req: Request, res: Response, next) => {
   const {
