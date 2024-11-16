@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/index.js",
-    "build": "tsc",
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "build": "tsc && copyfiles -u 1 src/favicon.ico dist",
+    "start:prod": "cross-env NODE_ENV=prod node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=dev ts-node-dev --respawn src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,8 @@
     "@types/nodemailer": "^6.4.16",
     "@types/sequelize": "^4.28.20",
     "@types/serve-favicon": "^2.5.7",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
   },
