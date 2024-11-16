@@ -6,7 +6,15 @@ import * as dotenv from "dotenv";
  */
 
 // Charger les variables d'environnement du fichier .env
-dotenv.config();
+if (!process.env.NODE_ENV) {
+  throw new Error(
+    "NODE_ENV n’est pas défini. Veuillez le spécifier avant de lancer l’application."
+  );
+} else if (process.env.NODE_ENV === "prod") {
+  dotenv.config({ path: "/etc/config/.env" });
+} else if (process.env.NODE_ENV === "dev") {
+  dotenv.config({ path: "./.env" });
+}
 
 interface Config {
   PORT: string; // port API
@@ -18,7 +26,6 @@ interface Config {
   DB_PORT: number;
   DB_SCHEMA: string;
   DB_TABLE: string;
-  ADMIN_EMAIL_PROTON: string;
   ADRESSE_SMTP: string;
   AUTH_USER: string;
   AUTH_PASSWORD: string;
@@ -36,7 +43,6 @@ function loadConfig(): Config {
     DB_PORT,
     DB_SCHEMA,
     DB_TABLE,
-    ADMIN_EMAIL_PROTON,
     ADRESSE_SMTP,
     AUTH_USER,
     AUTH_PASSWORD,
@@ -52,7 +58,6 @@ function loadConfig(): Config {
     !DB_PORT ||
     !DB_SCHEMA ||
     !DB_TABLE ||
-    !ADMIN_EMAIL_PROTON ||
     !ADRESSE_SMTP ||
     !AUTH_USER ||
     !AUTH_PASSWORD
@@ -71,7 +76,6 @@ function loadConfig(): Config {
     DB_PORT: parseInt(DB_PORT, 10), // Conversion en nombre
     DB_SCHEMA,
     DB_TABLE,
-    ADMIN_EMAIL_PROTON,
     ADRESSE_SMTP,
     AUTH_USER,
     AUTH_PASSWORD,
